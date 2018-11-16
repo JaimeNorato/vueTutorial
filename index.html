@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial Vue</title>
+    <style type="text/css">
+        input,textarea {
+            display: block;
+            margin: 10px 0;
+        }
+        .alerta{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <form action="">
+            <p v-if="!mensaje" class="alerta">Deves ingresar un menaje</p>
+            <textarea v-model="mensaje" cols="30" rows="10" placeholder="Escribe tu mensaje" required>
+
+            </textarea>
+            <input v-if="mensaje" type="submit" value="Enviar Mensaje" />
+
+            <pre>
+                {{ $data | json }}
+            </pre>
+
+        </form>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#content',
+            data:{
+                mensaje:'',
+            }
+        });
+    </script>
+</body>
+</html>
