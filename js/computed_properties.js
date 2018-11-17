@@ -15,6 +15,7 @@ new Vue({
                 alert("Rellene todos los campos.");
             }
         }
+
     },
 
     computed:{
